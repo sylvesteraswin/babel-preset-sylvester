@@ -11,7 +11,11 @@ function presets() {
                     "mode": "wrap"
                 }
             ],
-            require('babel-plugin-transform-object-assign')
+            require('babel-plugin-transform-object-assign'),
+            [require('babel-plugin-transform-es2015-template-literals'), { spec: true }],
+            require('babel-plugin-transform-exponentiation-operator'),
+            require('babel-plugin-syntax-trailing-function-commas'),
+            [require('babel-plugin-transform-object-rest-spread'), { useBuiltIns: true }]
         ],
         "env": {
             "start": {
