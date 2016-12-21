@@ -8,7 +8,8 @@
     "url": "git@github.com:sylvesteraswin/babel-preset-sylvester.git"
   },
   "scripts": {
-    "test:lint": "eslint . --ext .js --cache"
+    "test:lint": "eslint . --ext .js --cache",
+    "postpublish": "git tag $npm_package_version && git push origin --tags"
   },
   "author": {
     "name": "Sylvester Aswin",
