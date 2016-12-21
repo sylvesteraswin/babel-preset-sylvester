@@ -1,5 +1,7 @@
 .babelrc
 .eslintrc.js
 .eslintignore
+.eslintcache
+.vscode
 
 index.js

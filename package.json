@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-sylvester",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "This is my babel configurations for all my open source projects. Feel feel to use.",
   "main": "lib/index.js",
   "repository": {

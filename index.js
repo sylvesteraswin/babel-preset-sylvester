@@ -14,9 +14,7 @@ import presetReactHMRE from 'babel-preset-react-hmre';
 
 const configs = {
     presets: [
-        [preset2015, {
-            loose: true,
-        }],
+        preset2015,
         presetReact,
         presetStage1,
     ],
