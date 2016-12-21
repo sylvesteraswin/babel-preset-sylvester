@@ -1,30 +1,48 @@
-module.exports = {
+import preset2015 from 'babel-preset-es2015';
+import presetReact from 'babel-preset-react';
+import presetStage1 from 'babel-preset-stage-1';
+
+import transformReactRemovePropTypes from 'babel-plugin-transform-react-remove-prop-types';
+import transformObjectAssign from 'babel-plugin-transform-object-assign';
+import transform2015TemplateLiterals from 'babel-plugin-transform-es2015-template-literals';
+import transformExponentiationOperator from 'babel-plugin-transform-exponentiation-operator';
+import transformTrailingFunctionCommas from 'babel-plugin-syntax-trailing-function-commas';
+import transformObjectRestSpread from 'babel-plugin-transform-object-rest-spread';
+
+import presetReactHMRE from 'babel-preset-react-hmre';
+
+
+const configs = {
     presets: [
-        [require('babel-preset-es2015'), {
-            loose: true
+        [preset2015, {
+            loose: true,
         }],
-        require('babel-preset-react'),
-        require('babel-preset-stage-1')
+        presetReact,
+        presetStage1,
     ],
     plugins: [
         [
-            require('babel-plugin-transform-react-remove-prop-types'), {
-                mode: 'wrap'
-            }
+            transformReactRemovePropTypes, {
+                mode: 'wrap',
+            },
         ],
-        require('babel-plugin-transform-object-assign'),
-        [require('babel-plugin-transform-es2015-template-literals'), {
-            spec: true
+        transformObjectAssign,
+        [transform2015TemplateLiterals, {
+            spec: true,
         }],
-        require('babel-plugin-transform-exponentiation-operator'),
-        require('babel-plugin-syntax-trailing-function-commas'),
-        [require('babel-plugin-transform-object-rest-spread'), {
-            useBuiltIns: true
-        }]
+        transformExponentiationOperator,
+        transformTrailingFunctionCommas,
+        [transformObjectRestSpread, {
+            useBuiltIns: true,
+        }],
     ],
     env: {
         start: {
-            presets: [require('babel-preset-react-hmre')]
-        }
-    }
+            presets: [
+                presetReactHMRE,
+            ],
+        },
+    },
 };
+
+export default configs;
