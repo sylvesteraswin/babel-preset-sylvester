@@ -10,3 +10,8 @@ Just add this in your `.babelrc` file.
   "presets": ["sylvester"]
 }
 ```
+
+## Via Cli
+```
+babel script.js --presets sylvester
+```
